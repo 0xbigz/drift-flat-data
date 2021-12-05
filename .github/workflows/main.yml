@@ -39,7 +39,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git commit -m "snap data" -a
+          git commit -m "`date +'%Y-%m-%d %H:%M:%S'`" -a
           
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
