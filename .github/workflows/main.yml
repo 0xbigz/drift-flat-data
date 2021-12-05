@@ -12,9 +12,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-
-      - name: checkout repo content
-        uses: actions/checkout@v2 # checkout the repository content to github runner
+      - name: Checkout repository
+        uses: actions/checkout@master
+        
+      - name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@master
 
       - name: setup python
         uses: actions/setup-python@v2
