@@ -37,7 +37,7 @@ if __name__ == '__main__':
     users = drift.user_summary()
     users.to_csv("data/users_state.csv")    
 
-    positions = drift.user_position_summary()
+    positions = asyncio.run(drift.user_position_summary())
     positions.to_csv("data/positions_state.csv")    
 
     for key, df in df_dict.items():
