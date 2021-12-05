@@ -37,5 +37,8 @@ if __name__ == '__main__':
     users = drift.user_summary()
     users.to_csv("data/users_state.csv")    
 
+    positions = drift.user_position_summary()
+    users.to_csv("data/positions_state.csv")    
+
     for key, df in df_dict.items():
         df.to_csv('data/%s_history.csv' % str(key))
