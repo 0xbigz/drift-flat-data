@@ -6,6 +6,7 @@ import json
 import sys
 sys.path.append("drift-py/")
 
+os.environ["ANCHOR_WALLET"] = './.config/solana/id.json'
 
 from drift.drift import Drift, load_config, MARKET_INDEX_TO_PERP
 
