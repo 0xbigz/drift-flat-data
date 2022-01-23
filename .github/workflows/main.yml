@@ -32,7 +32,7 @@ jobs:
           EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
-        run: python drift_run.py
+        run: export ANCHOR_PROVIDER_URL=https://drift.genesysgo.net && python drift_run.py
           
       - name: commit files
         run: |
