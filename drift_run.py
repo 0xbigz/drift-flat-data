@@ -33,11 +33,13 @@ if __name__ == '__main__':
 
     markets = drift.market_summary()
     markets.to_csv("data/markets_state.csv")
+    try:
+        users = drift.user_summary()
+        users.to_csv("data/users_state.csv")   
+    except:
+        pass 
 
-    users = drift.user_summary()
-    users.to_csv("data/users_state.csv")    
-
-    positions = asyncio.run(drift.user_position_summary())
+    positions = asyncio.run(drift.user_position_summary()).dropna(how='all')
     positions.to_csv("data/positions_state.csv")    
 
     for key, df in df_dict.items():
